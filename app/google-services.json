@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "1010378957156",
+    "firebase_url": "https://dg-high.firebaseio.com",
+    "project_id": "dg-high",
+    "storage_bucket": "dg-high.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1010378957156:android:bc974b07b2fe229ea2da71",
+        "android_client_info": {
+          "package_name": "com.dghigh.liva"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1010378957156-cpht4eols1o7shdk9p5ae4fp6ghdm03p.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAdI-YGr2S1btnRhFY0Xp6rvEtzAyj9-UU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1010378957156-cpht4eols1o7shdk9p5ae4fp6ghdm03p.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

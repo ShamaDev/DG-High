@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="130dp"
+    android:layout_height="200dp"
+    android:background="@drawable/item4"
+    android:paddingTop="4dp"
+    android:layout_margin="8dp">
+
+    <TextView
+        android:id="@+id/nameHome"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Name"
+        android:layout_gravity="bottom|center"
+        android:textColor="#fff"
+        android:textAlignment="center"/>
+
+</FrameLayout>
