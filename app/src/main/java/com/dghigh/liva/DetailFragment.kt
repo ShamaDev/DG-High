@@ -38,6 +38,7 @@ class DetailFragment : Fragment() {
         save.setOnClickListener {
             Toast.makeText(context, "Сохранено", Toast.LENGTH_LONG).show()
             savePicture(convertViewToDrawable(detailPic))
+            findNavController().popBackStack()
         }
     }
 
