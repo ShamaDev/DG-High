@@ -1,5 +1,8 @@
 package com.dghigh.liva
 
+import android.Manifest
+import android.app.Activity
+import android.content.pm.PackageManager
 import android.graphics.Bitmap
 import android.graphics.Canvas
 import android.os.Bundle
@@ -10,6 +13,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.core.app.ActivityCompat
 import androidx.navigation.fragment.findNavController
 import kotlinx.android.synthetic.main.fragment_detail.*
 import java.io.File
@@ -17,6 +21,8 @@ import java.io.FileOutputStream
 import java.io.OutputStream
 
 class DetailFragment : Fragment() {
+    private val PICK_FROM_GALLERY = 1
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -28,6 +34,24 @@ class DetailFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        if (ActivityCompat.checkSelfPermission(
+                context as Activity,
+                Manifest.permission.READ_EXTERNAL_STORAGE
+            ) !== PackageManager.PERMISSION_GRANTED
+        ) {
+
+            ActivityCompat.requestPermissions(
+                context as Activity,
+                arrayOf<String>(
+                    Manifest.permission.READ_EXTERNAL_STORAGE,
+                    Manifest.permission.WRITE_EXTERNAL_STORAGE
+                ),
+                PICK_FROM_GALLERY
+
+            )
+        }
+
+
         back.setOnClickListener {
             findNavController().popBackStack()
         }
@@ -36,6 +60,7 @@ class DetailFragment : Fragment() {
 
 
         save.setOnClickListener {
+
             Toast.makeText(context, "Сохранено", Toast.LENGTH_LONG).show()
             savePicture(convertViewToDrawable(detailPic))
             findNavController().popBackStack()
